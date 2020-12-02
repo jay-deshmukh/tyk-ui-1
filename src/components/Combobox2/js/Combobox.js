@@ -348,7 +348,6 @@ function Combobox(props) {
     expandMode && 'expand-mode',
     `tyk-combobox2__current-values--${valuesExpanded ? 'expanded' : 'collapsed'}`,
   ].join(' ');
-  console.log('combobox2###', restProps);
   return (
     <div
       className={getCssClasses()}

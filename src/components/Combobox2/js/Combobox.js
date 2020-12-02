@@ -54,6 +54,7 @@ function Combobox(props) {
     selectAll,
     closeOnSelect,
     showSearch = false,
+    ...restProps
   } = props;
   const max = multiple ? Infinity : maxProp || (tags ? Infinity : 1);
   const renderList = CustomListComponent
@@ -347,12 +348,14 @@ function Combobox(props) {
     expandMode && 'expand-mode',
     `tyk-combobox2__current-values--${valuesExpanded ? 'expanded' : 'collapsed'}`,
   ].join(' ');
+  console.log('combobox2###', restProps);
   return (
     <div
       className={getCssClasses()}
       ref={rootRef}
       tabIndex={disabled ? '-1' : '0'}
       onClickCapture={onClickCapture}
+      {...restProps}
     >
       {label && (
         <label style={{ flexBasis: labelwidth || 'auto' }}>{label}</label>
